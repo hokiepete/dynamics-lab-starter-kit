@@ -10,6 +10,7 @@ This is a series of velocity fields for testing dynamical systems diagnostics.
 
 import numpy as np
 
+#domain is [0, 2]x[0, 1]
 def double_gyre(t,Y,A = 0.1,w = 0.2*np.pi,e = 0.25):
     a = e*np.sin(w*t)
     b = 1-2*e*np.sin(w*t)
@@ -19,14 +20,15 @@ def double_gyre(t,Y,A = 0.1,w = 0.2*np.pi,e = 0.25):
     v = np.pi*A*np.cos(np.pi*f)*np.sin(Y[1]*np.pi)*dfdx
     return [u,v]
 
+#domain is [0, 2]x[0, 1]
 def autonomous_double_gyre(t,Y):
     u =-np.pi*np.sin(np.pi*Y[0])*np.cos(Y[1]*np.pi)    
     v = np.pi*np.cos(np.pi*Y[0])*np.sin(Y[1]*np.pi)
     return [u,v]
 
+#!!!This is a version of the bickley jet flow which has been scaled down from
+#[0, 20000]x[-4000,4000] to [0, 5]x[-1,1]!!!
 def bickley_jet(t,Y):
-    #!!!This is a version of the bickley jet flow which has been scaled down from
-    #[0, 20000]x[-4000,4000] to [0, 5]x[-1,1]!!!
     U0=62.66 #m/s
     U0 = 3.6*U0 #km/hr
     U0 = U0/4000*24 #1/day

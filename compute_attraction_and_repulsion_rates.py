@@ -23,9 +23,12 @@ v = np.array([[1,1],[2,2]])
 #different sized data sets
 [ydim,xdim] = u.shape
 
-#Calculate the gradients of the velocity field
+#set dx and dy, this can be done dynamically with 
+#dx = x[1]-x[0] and dy = y[1]-y[0]
 dx=1
 dy=1
+
+#Calculate the gradients of the velocity field
 dudy,dudx = np.gradient(u,dy,dx)
 dvdy,dvdx = np.gradient(v,dy,dx)
 

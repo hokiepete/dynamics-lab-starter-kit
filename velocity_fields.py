@@ -142,16 +142,3 @@ def abc(t,Y, ABC_Amplitude=0.0):
   v = Bp*np.sin(Y[0]) + (Ap+ABC_Amplitude*np.sin(np.pi*t))*np.cos(Y[2])
   w = np.sin(Y[1]) + Bp*np.cos(Y[0])
   return [u,v,w]
-
-
-
-'''
-
-x = np.linspace(-1,1,11)
-y = np.linspace(-1,1,11)
-x,y=np.meshgrid(x,y)
-u,v=ex11(0,[x,y])
-import matplotlib.pyplot as plt
-plt.close('all')
-plt.quiver(x,y,u,v)
-'''

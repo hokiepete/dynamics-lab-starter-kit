@@ -64,10 +64,10 @@ for i in range(ydim):
             #If the data is masked, then mask the grid point in the output.
             s1[i,j] = np.ma.masked
             s2[i,j] = np.ma.masked
+            Xi1[i,j,0] = np.ma.masked
             Xi1[i,j,1] = np.ma.masked
-            Xi1[i,j,2] = np.ma.masked
+            Xi2[i,j,0] = np.ma.masked
             Xi2[i,j,1] = np.ma.masked
-            Xi2[i,j,2] = np.ma.masked
 
 
 #Now we need to calculate the directional derivative of the attraction and repulsion rates
